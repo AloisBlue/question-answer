@@ -1,0 +1,155 @@
+.auth-wrap {
+    height: 100vh;
+    background: #2b2d34;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: sans-serif;
+    .content-sect {
+        display: flex;
+        width: 60%;
+        height: 80%;
+        border-radius: 3px;
+
+        .left {
+            width: 50%;
+            background-image: url("../assets/images/laptop.jpg");
+            background-position: center;
+            background-size: cover;
+            border-radius: 3px 0 0 3px;
+            display: flex;
+            h4 {
+                font-size: 23px;
+                line-height: 1px;
+                font-weight: bold;
+                color: white;
+            }
+            p {
+                margin-top: 50px;
+                color: white;
+                font-size: 15px;
+                line-height: 25px;
+            }
+            .button {
+                margin-top: 40px;
+                .btn-link {
+                    background: rgb(0, 0, 0, .9);
+                    padding: 12px 35px;
+                    font-weight: 600;
+                    color: white;
+                    border-radius: 3px;
+                    text-decoration: none;
+                }
+            }
+            .left-background {
+                background: rgb(0, 0, 255, .7);
+                border-radius: 3px 0 0 3px;
+                padding: 0 50px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+        }
+        .right {
+            width: 50%;
+            border-radius: 0 3px 3px 0;
+            background: white;
+            display: flex;
+            .form {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                .error {
+                    font-size: 12px;
+                    color:  #d9534f;
+                }
+                .error-g {
+                    border: 1px solid #f5c6cb;
+                    display: flex;
+                    justify-content: space-around;
+                    margin-bottom: 20px;
+                    background: #f8d7da;
+                    padding: 10px 0;
+                    border-radius: 3px;
+                    small {
+                        font-size: 14px;
+                        color:  #bc4c24;
+                    }
+                }
+                .s-input {
+                    label {
+                        display: block;
+                        color: #706b6b;
+                        margin: 8px 0;
+                        font-size: 15px;
+                    }
+                    input {
+                        width: 280px;
+                        height: 30px;
+                        border: 1px solid #d0d0d0;
+                        border-radius: 3px;
+                        color: #292828;
+                        font-size: 16px;
+                        padding: 5px 10px;
+                        font-size: 15px;
+                    }
+                    input:focus {
+                        outline: none !important;
+                        border: 1px solid #2d2de4;
+                    }
+                    input::placeholder {
+                        font-size: 13px;
+                    }
+                }
+                .s-check {
+                    margin: 20px 0 10px 0;
+                    input {
+                        margin-right: 15px;
+                    }
+                    label {
+                        color: #706b6b;
+                        font-size: 15px;
+                        .terms-link {
+                            color: #2d2de4;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .s-submit {
+                    margin-top: 40px;
+                    display: flex;
+                    input {
+                        width: 305px;
+                        height: 35px;
+                        background: #2d2de4;
+                        color: white;
+                        border: none;
+                        cursor: pointer;
+                        border-radius: 3px;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                    input:hover {
+                        background: #101091;
+                    }
+                }
+                .other {
+                    p {
+                        text-align: center;
+                        font-size: 14px;
+                        color: #292828;
+                    }
+                    .google {
+                        height: 50px;
+                        background-image: url("../assets/images/google.png");
+                        background-position: center;
+                        background-size: cover;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
