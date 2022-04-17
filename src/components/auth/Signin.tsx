@@ -1,7 +1,6 @@
 import { ChangeEvent, FC, FormEvent, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import validator from "validator";
 import { loginUser } from "../../store/actions/auth";
 import { getErrors } from "../../store/reducers/errors";
@@ -91,7 +90,7 @@ const Signin: FC = () => {
                     <div className="form">
                         <form onSubmit={onSubmit}>
                             {
-                                globalErrors && globalErrors.errors.global &&
+                                globalErrors && globalErrors?.errors?.global &&
                                 <div className="error-g">
                                     <small>{globalErrors.errors.global}</small>
                                 </div>

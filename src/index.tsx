@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import jwtDecode from 'jwt-decode';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -8,7 +9,30 @@ import { Provider } from 'react-redux'
 import "../src/styles/auth.scss";
 import 'react-toastify/dist/ReactToastify.css';
 import store from "./store/index"
+import setAuthToken from './utils/setAuthToken';
+import { loginUserAction, logoutUser } from './store/actions/auth';
+import { IDecoded } from './models/User';
 
+
+if(localStorage.getItem('developerToken')) {
+  let token = localStorage.getItem('developerToken');  
+
+  const decoded: IDecoded = jwtDecode(token!);
+  
+  // check token expiration
+  const thisTime = Date.now() / 1000;
+
+  if (decoded.exp < thisTime) {
+    store.dispatch<any>(logoutUser());
+    window.location.href = "/";
+    window.location.reload();
+  }
+
+  // set user & isAuthenticated
+  store.dispatch<any>(loginUserAction(decoded));
+
+  setAuthToken(token!)
+}
 
 ReactDOM.render(
   <React.StrictMode>

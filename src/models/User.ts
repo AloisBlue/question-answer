@@ -4,6 +4,15 @@ export interface ISignup {
     password: string;
 }
 
+export interface IDecoded {
+    email: string;
+    exp: number;
+    iat: number;
+    isAdmin: boolean;
+    password: string;
+    _id: string;
+}
+
 export interface ILogin {
     email: string;
     password: string;

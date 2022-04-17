@@ -1,4 +1,4 @@
-import { LOGIN_USER, LOADING, SIGNUP_USER } from "../types";
+import { LOGIN_USER, LOADING, SIGNUP_USER,LOGOUT_USER } from "../types";
 import authApi from "../../api/auth";
 import { ILogin, ISignup } from "../../models/User";
 import setAuthToken from "../../utils/setAuthToken";
@@ -20,6 +20,10 @@ const signupUserAction = (data: ISignup) => ({
   payload: data
 });
 
+const logoutUserAction = () => ({
+  type: LOGOUT_USER
+})
+
 export const loginUser = (user: ILogin) => async (dispatch: Function) => {
   dispatch(usersLoading());
   try {
@@ -29,6 +33,8 @@ export const loginUser = (user: ILogin) => async (dispatch: Function) => {
 
     localStorage.setItem('developerToken', token);
     setAuthToken(token)
+    console.log(resp);
+        
     dispatch(loginUserAction(resp));
   } catch (error) {
     dispatch(errorsSetter(error))
@@ -41,7 +47,7 @@ export const signupUser = (user: ISignup, navigate: Function, toast: any) => asy
     let resp = await authApi.signup(user)
 
     dispatch(signupUserAction(resp));
-    navigate(Paths.signin);
+    navigate(Paths.auth.signin);
     toast.success(resp.message, {
       icon: "🚀"
     });
@@ -50,3 +56,10 @@ export const signupUser = (user: ISignup, navigate: Function, toast: any) => asy
   }
 }
 
+export const logoutUser = () => (dispatch: Function) => {
+  localStorage.removeItem('developerToken');
+  setAuthToken(false);
+  dispatch(logoutUserAction());
+}
+
+export { loginUserAction };

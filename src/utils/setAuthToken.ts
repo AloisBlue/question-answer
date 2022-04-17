@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const setAuthToken = (token: string) => {
+
+type tokenParameter = string | boolean
+
+const setAuthToken = (token: tokenParameter) => {
   if (token) {
     // Provide for each request
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;

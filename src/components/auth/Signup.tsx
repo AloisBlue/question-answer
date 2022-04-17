@@ -117,7 +117,7 @@ const Signup: FC = () => {
                     <div className="form">
                         <form onSubmit={onSubmit}>
                             {
-                                globalErrors && globalErrors.errors.global &&
+                                globalErrors && globalErrors?.errors?.global &&
                                 <div className="error-g">
                                     <small>{globalErrors.errors.global}</small>
                                 </div>

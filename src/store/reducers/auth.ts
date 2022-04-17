@@ -1,28 +1,35 @@
 import { authActionsTypes } from "../actions/actionTypes";
-import { LOGIN_USER, LOADING } from "../types";
+import { SIGNUP_USER, LOGIN_USER, LOADING } from "../types";
 import { authReducerType } from "./reducerTypes";
 
 const initialState: authReducerType = {
     user: null,
-    // isLoggedIn: false,
+    isAuthenticated: false,
     loading: true
 };
 
 const authReducer = (state = initialState, action: authActionsTypes): authReducerType => {
     const { type, payload } = action;
     switch (type) {
+      case SIGNUP_USER:
+        return {
+          ...state,
+          user: payload,
+          isAuthenticated: false,
+          loading: false
+        };
       case LOGIN_USER:
         return {
           ...state,
           user: payload,
-          //isLoggedIn: true,
+          isAuthenticated: true,
           loading: false
         };
       case LOADING:
         return {
           ...state,
           user: null,
-          //isLoggedIn: false,
+          isAuthenticated: false,
           loading: true
         };
       default:
