@@ -1,6 +1,6 @@
-import { LOGIN_USER, LOADING, SIGNUP_USER,LOGOUT_USER } from "../types";
+import { LOGIN_USER, LOADING, SIGNUP_USER, LOGOUT_USER } from "../types";
 import authApi from "../../api/auth";
-import { ILogin, ISignup } from "../../models/User";
+import { IDecoded, ILogin, ISignup } from "../../models/User";
 import setAuthToken from "../../utils/setAuthToken";
 import { errorsSetter } from "./errors";
 import Paths from "../../routes/Paths";

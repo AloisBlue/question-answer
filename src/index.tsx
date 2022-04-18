@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import "../src/styles/auth.scss";
+import "../src/styles/layout.scss";
 import 'react-toastify/dist/ReactToastify.css';
 import store from "./store/index"
 import setAuthToken from './utils/setAuthToken';

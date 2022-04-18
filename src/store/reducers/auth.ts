@@ -1,5 +1,5 @@
 import { authActionsTypes } from "../actions/actionTypes";
-import { SIGNUP_USER, LOGIN_USER, LOADING } from "../types";
+import { SIGNUP_USER, LOGIN_USER, LOADING, LOGOUT_USER } from "../types";
 import { authReducerType } from "./reducerTypes";
 
 const initialState: authReducerType = {
@@ -32,6 +32,13 @@ const authReducer = (state = initialState, action: authActionsTypes): authReduce
           isAuthenticated: false,
           loading: true
         };
+      case LOGOUT_USER:
+        return {
+          ...state,
+          user: null,
+          isAuthenticated: false,
+          loading: false
+        }
       default:
         return state;
     }

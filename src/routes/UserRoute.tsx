@@ -1,16 +1,7 @@
 import { Navigate } from "react-router-dom";
+import LayoutWrapper from "../components/layout/LayoutWrapper";
 import { useAuth } from "../hooks/auth";
 import Paths from "./Paths";
-
-interface IProps {
-    component: any;
-}
-
-const UserRoute = ({ component: Component, ...rest}: IProps) => {
-    const isAuthenticated = useAuth();
-    
-    return isAuthenticated ? <Component /> : <Navigate to={Paths.auth.signin} />
-};
 
 
 const UserWrap = ({ component: Component }: any) => {
@@ -19,7 +10,14 @@ const UserWrap = ({ component: Component }: any) => {
     return (
         <div>
             {
-                isAuthenticated ? Component : <Navigate to={Paths.auth.signin} />
+                isAuthenticated ? (
+                    <LayoutWrapper>
+                        {Component}
+                    </LayoutWrapper>
+                )
+                 : (
+                    <Navigate to={Paths.auth.signin} />
+                 )
             }
         </div>
     )
