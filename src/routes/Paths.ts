@@ -4,6 +4,9 @@ const Paths = {
         signup: '/signup',
         signin: '/signin'
     },
+    user: {
+        profile: '/profile'
+    },
     questions: {
         dashboard: '/dashboard'
     }

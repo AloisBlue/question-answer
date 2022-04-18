@@ -43,6 +43,7 @@
                 height: 70%;
                 width: 100%;
                 ul {
+                    padding-top: 35px;
                     width: 100%;
                 }
                 .normal-link {
@@ -53,10 +54,12 @@
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
+                    padding-bottom: 20px;
                 }
                 .name {
                     display: inline-block;
                     font-weight: 600;
+                    font-size: 15px;
                 }
                 .icon {
                     width: 20%;
@@ -65,7 +68,8 @@
                     }
                 }
                 .active-link {
-                    color: #2d2de4;   
+                    color: #2d2de4;
+                    cursor: pointer;
                 }
             }
             .footer {
@@ -88,15 +92,13 @@
                 .name {
                     display: inline-block;
                     font-weight: 600;
+                    font-size: 15px;
                 }
                 .icon {
                     width: 20%;
                     .f-icon {
                         font-size: 22px;
                     }
-                }
-                .active-link {
-                    color: #2d2de4;   
                 }
             }
         }
