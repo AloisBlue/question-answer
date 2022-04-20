@@ -1,5 +1,6 @@
-import { LOGIN_USER, LOADING, SIGNUP_USER, ERRORS, LOGOUT_USER, GET_PROFILE } from "../types";
+import { LOGIN_USER, LOADING, SIGNUP_USER, ERRORS, LOGOUT_USER, GET_PROFILE, ASK_QUESTION } from "../types";
 import { ILogin, ISignup, IDecoded } from "../../models/User";
+import { Question } from "../../models/Question";
 
 
 // auth interfaces
@@ -36,7 +37,14 @@ interface profile {
   payload: any
 }
 
+// question interfaces
+interface question {
+  type: typeof ASK_QUESTION,
+  payload: Question
+}
+
 // all exports goes here
 export type authActionsTypes = login | loading | signup | errors | logout;
 export type errorsActionsTypes = errors ;
 export type profileActionsTypes = profile;
+export type questionActionsTypes = question;

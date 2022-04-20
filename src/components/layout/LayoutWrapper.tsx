@@ -9,7 +9,7 @@ const LayoutWrapper:FC = ({ children }: any) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        //dispatch(getProfile())
+        dispatch(getProfile())
     }, []);
 
     return (

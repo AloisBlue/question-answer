@@ -5,7 +5,6 @@ import { profileReducerType } from "./reducerTypes";
 
 const initialState: profileReducerType = {
     user: null,
-    loading: false
 };
 
 const profileReducer = (state = initialState, action: profileActionsTypes): profileReducerType => {
@@ -15,7 +14,6 @@ const profileReducer = (state = initialState, action: profileActionsTypes): prof
         return {
           ...state,
           user: payload,
-          loading: false
         };
       default:
         return state;
@@ -23,5 +21,5 @@ const profileReducer = (state = initialState, action: profileActionsTypes): prof
 };
 
 export default profileReducer;
-export const getProfile = (state: RootState) => state.profileReducer.user;
+export const loadProfile = (state: RootState) => state.profileReducer.user;
 

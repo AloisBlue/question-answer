@@ -1,14 +1,18 @@
 import { FC } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import { ILink } from "../../models/Common";
 import Paths from "../../routes/Paths";
-import { useNavigate } from "react-router-dom";
+import { loadProfile } from "../../store/reducers/profile";
 
 
 const Appbar: FC = () => {
     const navigate = useNavigate();
-
+    const profile = useSelector(loadProfile);
+    
     const links: ILink[] = [
         {
             name: 'Dashboard',
@@ -53,18 +57,24 @@ const Appbar: FC = () => {
                     </div>
                 </div>
                 <div className="right-content">
-                    <div className="credentials">
-                        <div className="image">
-                            <img />
-                        </div>
-                        <div className="details">
-                            <small>Logged in as</small>
-                            <p>Alois Blue</p>
-                        </div>
-                    </div>
-                    {/* <div className="drop-down">
-                        <small>icon</small>
-                    </div> */}
+                    {
+                        profile && (
+                            <>
+                                <div className="credentials">
+                                    <div className="image">
+                                        <img src={profile.avatar} alt=""/>
+                                    </div>
+                                    <div className="details">
+                                        <small>Logged in as</small>
+                                        <p>{profile.userName}</p>
+                                    </div>
+                                </div>
+                                <div className="drop-down">
+                                    <FontAwesomeIcon className="icon" icon={faChevronCircleDown} />
+                                </div>
+                            </>
+                        )
+                    }
                 </div>
             </div>
         </>

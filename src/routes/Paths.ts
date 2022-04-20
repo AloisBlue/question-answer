@@ -13,7 +13,8 @@ const Paths = {
         contact: '/contact'
     },
     questions: {
-        dashboard: '/dashboard'
+        dashboard: '/dashboard',
+        askQuestion: '/ask-question'
     }
 }
 

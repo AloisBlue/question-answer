@@ -28,7 +28,7 @@
                         display: inline-block;
                         margin-right: 40px;
                         font-weight: 600;
-                        font-size: 15px;
+                        font-size: 13px;
                     }
                 }
             }
@@ -60,6 +60,41 @@
             }
             .right-content {
                 width: 21%;
+                display: flex;
+                justify-content: space-between;
+                .credentials {
+                    width: 70%;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 10px 0 20px;
+                    .image {
+                        img {
+                            width: 35px;
+                            height: 35px;
+                        }
+                    }
+                    .details {
+                        padding-left: 10px;
+                        small {
+                            font-size: 11px;
+                            color: #7c7f85;
+                        }
+                        p {
+                            line-height: 1px;
+                            font-size: 13px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .drop-down {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 30%;
+                    .icon {
+                        font-size: 20px;
+                    }
+                }
             }
         }
     }
@@ -114,7 +149,7 @@
                 .name {
                     display: inline-block;
                     font-weight: 600;
-                    font-size: 15px;
+                    font-size: 13px;
                 }
                 .icon {
                     width: 20%;
@@ -147,7 +182,7 @@
                 .name {
                     display: inline-block;
                     font-weight: 600;
-                    font-size: 15px;
+                    font-size: 13px;
                 }
                 .icon {
                     width: 20%;

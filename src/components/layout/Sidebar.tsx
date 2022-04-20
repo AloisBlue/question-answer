@@ -36,7 +36,7 @@ const Sidebar:FC = () => {
     return (
         <>
             <div className="topper">
-                <p className="logo-image">Q <span className="white-span">&</span> A</p>
+                <p className="logo-image">q<span className="white-span">&</span>a</p>
             </div>
             <div className="others">
                 <div className="links">

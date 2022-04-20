@@ -1,4 +1,5 @@
 import { IProfile } from "../../models/Profile";
+import { Question } from "../../models/Question";
 import { ILogin, ISignup } from "../../models/User";
 
 
@@ -14,5 +15,8 @@ export type errorsReducerType = {
 
 export type profileReducerType = {
   user: IProfile | null,
-  loading: boolean
+};
+
+export type questionReducerType = {
+  question: Question | null,
 };

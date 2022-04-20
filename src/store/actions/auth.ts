@@ -32,9 +32,7 @@ export const loginUser = (user: ILogin) => async (dispatch: Function) => {
     let token = resp.token
 
     localStorage.setItem('developerToken', token);
-    setAuthToken(token)
-    console.log(resp);
-        
+    setAuthToken(token)        
     dispatch(loginUserAction(resp));
   } catch (error) {
     dispatch(errorsSetter(error))
@@ -62,4 +60,4 @@ export const logoutUser = () => (dispatch: Function) => {
   dispatch(logoutUserAction());
 }
 
-export { loginUserAction, usersLoading };
+export { loginUserAction };

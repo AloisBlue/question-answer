@@ -12,28 +12,9 @@
             margin-right: 10px;
             border-right: 1px solid #e9eaea;
         }
-        .header {
-            height: 60px;
-            border-bottom: 1px solid #e9eaea;
-            border-top: 1px solid white;
-            ul {
-                display: block;
-                li {
-                    display: inline-block;
-                    padding: 5px 0 20px 0;
-                    margin-right: 15px;
-                    cursor: pointer;
-                    font-weight: 500;
-                    font-size: 14px;
-                    color: #26333b
-                }
-                .active-li {
-                    border-bottom: 2px solid #272930;
-                }
-            }
-        }
         .body-details {
-            height: calc(100vh - 132px);;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
         }
     }
     .right-section {
