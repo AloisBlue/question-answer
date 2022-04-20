@@ -7,6 +7,11 @@ const Paths = {
     user: {
         profile: '/profile'
     },
+    appbar: {
+        about: '/about',
+        career: '/career',
+        contact: '/contact'
+    },
     questions: {
         dashboard: '/dashboard'
     }

@@ -11,6 +11,7 @@ const UserWrap = ({ component: Component }: any) => {
         <div>
             {
                 isAuthenticated ? (
+                    // Add the layout styles here; sidebar & appbar
                     <LayoutWrapper>
                         {Component}
                     </LayoutWrapper>

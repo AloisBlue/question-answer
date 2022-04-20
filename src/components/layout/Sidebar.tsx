@@ -5,13 +5,7 @@ import { logoutUser } from "../../store/actions/auth";
 import { useDispatch } from "react-redux";
 import Paths from "../../routes/Paths";
 import { useLocation, useNavigate } from "react-router-dom";
-
-
-interface ILink {
-    name: string;
-    icon: IconDefinition;
-    path: string;
-}
+import { ILink } from "../../models/Common";
 
 const Sidebar:FC = () => {
     const dispatch = useDispatch();
@@ -48,8 +42,8 @@ const Sidebar:FC = () => {
                 <div className="links">
                     <ul>
                         {
-                            links.map(link => (
-                                <li className={`${isActive(link.path) ? 'active-link' : 'normal-link'}`} onClick={() => navigate(link.path)}><span className="icon"><FontAwesomeIcon className="f-icon" icon={link.icon} /></span><span className="name">{link.name}</span></li>
+                            links.map((link, i) => (
+                                <li key={i} className={`${isActive(link.path) ? 'active-link' : 'normal-link'}`} onClick={() => navigate(link.path)}><span className="icon"><FontAwesomeIcon className="f-icon" icon={link.icon!} /></span><span className="name">{link.name}</span></li>
                             ))
                         }
                     </ul>

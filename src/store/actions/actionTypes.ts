@@ -1,4 +1,4 @@
-import { LOGIN_USER, LOADING, SIGNUP_USER, ERRORS, LOGOUT_USER } from "../types";
+import { LOGIN_USER, LOADING, SIGNUP_USER, ERRORS, LOGOUT_USER, GET_PROFILE } from "../types";
 import { ILogin, ISignup, IDecoded } from "../../models/User";
 
 
@@ -30,6 +30,13 @@ interface errors {
   payload: any
 }
 
+// profile interfaces
+interface profile {
+  type: typeof GET_PROFILE,
+  payload: any
+}
+
 // all exports goes here
 export type authActionsTypes = login | loading | signup | errors | logout;
 export type errorsActionsTypes = errors ;
+export type profileActionsTypes = profile;

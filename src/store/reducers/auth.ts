@@ -5,7 +5,7 @@ import { authReducerType } from "./reducerTypes";
 const initialState: authReducerType = {
     user: null,
     isAuthenticated: false,
-    loading: true
+    loading: false
 };
 
 const authReducer = (state = initialState, action: authActionsTypes): authReducerType => {

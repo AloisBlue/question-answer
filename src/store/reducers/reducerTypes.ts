@@ -1,3 +1,4 @@
+import { IProfile } from "../../models/Profile";
 import { ILogin, ISignup } from "../../models/User";
 
 
@@ -9,4 +10,9 @@ export type authReducerType = {
 
 export type errorsReducerType = {
   errors: any
+};
+
+export type profileReducerType = {
+  user: IProfile | null,
+  loading: boolean
 };

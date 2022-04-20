@@ -1,6 +1,6 @@
 const Dashboard = () => {
     return(
-        <div>
+        <div className="dashboard">
             this is the authenticated dashboard
         </div>
     );

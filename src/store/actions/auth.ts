@@ -62,4 +62,4 @@ export const logoutUser = () => (dispatch: Function) => {
   dispatch(logoutUserAction());
 }
 
-export { loginUserAction };
+export { loginUserAction, usersLoading };

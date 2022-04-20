@@ -6,6 +6,61 @@
             background: #272930;
             height: 70px;
             color: white;
+            display: flex;
+            .center-content {
+                border-right: 1px solid #7c7f85;
+                width: 79%;
+                display: flex;
+            }
+            .bar-links {
+                width: 60%;
+                display: flex;
+                align-items: center;
+                margin-left: 20px;
+                .bar {
+                    font-size: 22px;
+                }
+                .links {
+                    ul {
+                        display: block;
+                    }
+                    li {
+                        display: inline-block;
+                        margin-right: 40px;
+                        font-weight: 600;
+                        font-size: 15px;
+                    }
+                }
+            }
+            .search {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width: 38%;
+                input {
+                    margin-right: 20px;
+                    height: 25px;
+                    width: 250px;
+                    border: 1px solid #202228;
+                    border-radius: 3px;
+                    background: #202228;
+                    color: white;
+                    font-size: 15px;
+                    padding: 2px 15px;
+                    outline: none;
+                }
+                input:focus {
+                    border: 1px solid #7c7f85;
+                }
+                input::placeholder {
+                    color: #7c7f85;
+                    font-style: italic;
+                    font-size: 13px;
+                }
+            }
+            .right-content {
+                width: 21%;
+            }
         }
     }
     .sidebar {
