@@ -1,6 +1,6 @@
-import { LOGIN_USER, LOADING, SIGNUP_USER, ERRORS, LOGOUT_USER, GET_PROFILE, ASK_QUESTION } from "../types";
-import { ILogin, ISignup, IDecoded } from "../../models/User";
-import { Question } from "../../models/Question";
+import { LOGIN_USER, LOADING, SIGNUP_USER, ERRORS, LOGOUT_USER, GET_PROFILE, ASK_QUESTION, GET_QUESTIONS, SEND_ANSWER, GET_QUESTION, SEND_COMMENT } from "../types";
+import { ILogin, ISignup } from "../../models/User";
+import { Answer, Comment, Question } from "../../models/Question";
 
 
 // auth interfaces
@@ -39,12 +39,27 @@ interface profile {
 
 // question interfaces
 interface question {
-  type: typeof ASK_QUESTION,
+  type: typeof ASK_QUESTION | typeof GET_QUESTION,
   payload: Question
 }
 
+interface questions {
+  type: typeof GET_QUESTIONS,
+  payload: Question[]
+}
+
+interface answer {
+  type: typeof SEND_ANSWER,
+  payload: Answer
+}
+
+interface comment {
+  type: typeof SEND_COMMENT,
+  payload: Comment
+}
+
 // all exports goes here
-export type authActionsTypes = login | loading | signup | errors | logout;
+export type authActionsTypes = login | loading | signup | logout;
 export type errorsActionsTypes = errors ;
 export type profileActionsTypes = profile;
-export type questionActionsTypes = question;
+export type questionActionsTypes = question | questions | answer | comment;

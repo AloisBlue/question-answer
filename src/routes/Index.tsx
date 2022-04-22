@@ -9,6 +9,7 @@ import GuestWrap from "./GuestRoute";
 import Dashboard from "../components/questions/Dashboard";
 import Profile from "../components/user/Profile";
 import AskQuestion from "../components/questions/AskQuestion";
+import ViewQuestion from "../components/questions/ViewQuestion";
 
 
 const Index: FC = () => {    
@@ -19,6 +20,7 @@ const Index: FC = () => {
             <Route path={Paths.auth.signin} element={<GuestWrap component={<Signin />} />} />
             <Route path={Paths.questions.dashboard} element={<UserWrap component={<Dashboard />} />} />
             <Route path={Paths.questions.askQuestion} element={<UserWrap component={<AskQuestion />} />} />
+            <Route path={Paths.questions.viewQuestion} element={<UserWrap component={<ViewQuestion />} />} />
             <Route path={Paths.user.profile} element={<UserWrap component={<Profile />} />} />
         </Routes>
     )

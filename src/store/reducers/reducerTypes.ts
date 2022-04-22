@@ -1,5 +1,5 @@
 import { IProfile } from "../../models/Profile";
-import { Question } from "../../models/Question";
+import { Answer, Comment, Question } from "../../models/Question";
 import { ILogin, ISignup } from "../../models/User";
 
 
@@ -19,4 +19,7 @@ export type profileReducerType = {
 
 export type questionReducerType = {
   question: Question | null,
+  questions: Question[] | null
+  answer: Answer | null,
+  comment: Comment | null
 };

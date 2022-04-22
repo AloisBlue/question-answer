@@ -14,7 +14,8 @@ const Paths = {
     },
     questions: {
         dashboard: '/dashboard',
-        askQuestion: '/ask-question'
+        askQuestion: '/ask-question',
+        viewQuestion: '/view-question/:id'
     }
 }
 

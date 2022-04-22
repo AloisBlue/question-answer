@@ -110,14 +110,22 @@
                         margin-top: 10px;
                         .common {
                             display: flex;
+                            .span {
+                                display: flex;
+                                align-items: center;
+                                padding: 0 20px;
+                                .check-icon {
+                                    font-size: 30px;
+                                }
+                            }
                             .icon {
                                 font-size: 14px;
                             }
-                            .t-up {
-                                color: #2d2de4;
+                            .t-check {
+                                color: green;
                             }
-                            .t-down {
-                                color: red;
+                            .t-answer {
+                                color: #2d2de4;
                             }
                             button {
                                 height: 30px;
@@ -153,6 +161,55 @@
                             }
                         }
                     }
+                    .send-answer {
+                        background: #f5f5f5;
+                        border-radius: 3px;
+                        padding: 20px;
+                        margin-top: 10px;
+                        .centered {
+                            display: flex;
+                            justify-content: space-around;
+                            margin-top: 10px;
+                        }
+                        textarea {
+                            display: block;
+                            height: 80px;
+                            width: 90%;
+                            border: 1px solid #e9eaea;
+                            border-radius: 3px;
+                            color: #292828;
+                            font-size: 16px;
+                            padding: 10px 10px;
+                            font-size: 15px;
+                            margin-bottom: 5px;
+                        }
+                        textarea:focus {
+                            outline: none !important;
+                            border: 1px solid #2d2de4;
+                        }
+                        textarea::placeholder {
+                            font-size: 13px;
+                        }
+                        input {
+                            height: 30px;
+                            background: #2d2de4;
+                            color: white;
+                            border: none;
+                            cursor: pointer;
+                            border-radius: 3px;
+                            font-size: 12px;
+                            font-weight: 600;
+                            padding: 0 30px;
+                            width: 150px;
+                        }
+                        input:hover {
+                            background: #101091;
+                        }
+                        small {
+                            font-size: 12px;
+                            color:  #d9534f;
+                        }
+                    }
                 }
             }
         }
@@ -185,7 +242,6 @@
                 border: 1px solid #d0d0d0;
                 border-radius: 3px;
                 color: #292828;
-                font-size: 16px;
                 padding: 5px 10px;
                 font-size: 15px;
                 margin-bottom: 5px;
@@ -204,7 +260,6 @@
                 border: 1px solid #d0d0d0;
                 border-radius: 3px;
                 color: #292828;
-                font-size: 16px;
                 padding: 10px 10px;
                 font-size: 15px;
                 margin-bottom: 5px;
@@ -241,5 +296,210 @@
                 background: #101091;
             }
         }
+    }
+}
+
+// Add question styling goes here
+.view-question {
+    border-top: 1px solid white;
+    .padding {
+        padding: 20px 40px;
+    }
+    .user {
+        height: 60px;
+        border-bottom: 1px solid #e9eaea;
+        margin-bottom: 20px;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .details {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid #2d2de4;
+                padding: 2px;  
+                margin-right: 10px; 
+            }
+            small {
+                .span1 {
+                    font-weight: 500;
+                    color: #272930;
+                }
+                .span2 {
+                    font-size: 11px;
+                    color: #7e7b7b;
+                }
+                span {
+                    display: block;
+                    padding: 3px 0;
+                }
+            }     
+        }
+        .time {
+            width: 50%;
+            p {
+                font-size: 11px;
+                color: #7e7b7b;
+                width: 100%;
+                margin: 0;
+                text-align: end;
+            }
+        }
+    }
+    .question {
+        color: #272930;
+        background: #f5f5f5;
+        border: 1px solid rgb(241, 243, 243);
+        border-radius: 3px;
+        padding: 20px;
+        margin-bottom: 20px;
+        h4 {
+            line-height: 0;
+            margin: 0;
+            padding: 5px 0 20px 0;
+        }
+        p {
+            line-height: 0;
+            margin: 0;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #272930;
+            letter-spacing: .1em;
+        }
+    }
+    .answers {
+        box-shadow: 0 10px 6px -6px #e2dede;
+        border: 1px solid rgb(241, 243, 243);
+        border-radius: 3px;
+        padding: 20px;
+        .answer {
+            border-bottom: 1px solid #e2dede;
+            padding: 25px 0 10px 0;
+            p {
+                margin: 0;
+                color: #272930;
+                font-size: 14px;
+            }
+            .operations {
+                background: #f5f5f5;
+                border-radius: 3px;
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+                margin-top: 10px;
+                .tools {
+                    display: flex;
+                    .span {
+                        display: flex;
+                        align-items: center;
+                        padding: 0 20px;
+                        .check-icon {
+                            font-size: 25px;
+                        }
+                    }
+                    .icon {
+                        font-size: 14px;
+                    }
+                    .t-check {
+                        color: green;
+                    }
+                    .t-comment {
+                        color: #181717;
+                    }
+                    .t-up {
+                        color: #2d2de4;
+                    }
+                    .t-down {
+                        color: red;
+                    }
+                    button {
+                        height: 30px;
+                        width: 140px;
+                        padding: 0 15px;
+                        margin-right: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        cursor: pointer;
+                        color: #727070;
+                        border: 1px solid #e2dede;
+                        background: inherit;
+                        border-radius: 3px;
+                    }
+                    button:hover {
+                        background: #e5e2e2;
+                    }
+                }
+                .to-comment {
+                    button {
+                        height: 30px;
+                        border: 1px solid #292828;
+                        background: #292828;
+                        border-radius: 3px;
+                        color: white;
+                        padding: 0 15px;
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+                    button:hover {
+                        background: #181717;
+                    }
+                }
+            }
+            .send-comment {
+                background: #f5f5f5;
+                border-radius: 3px;
+                padding: 20px;
+                margin-top: 10px;
+                .centered {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 10px;
+                }
+                textarea {
+                    display: block;
+                    height: 80px;
+                    width: 90%;
+                    border: 1px solid #e9eaea;
+                    border-radius: 3px;
+                    color: #292828;
+                    font-size: 16px;
+                    padding: 10px 10px;
+                    font-size: 15px;
+                    margin-bottom: 5px;
+                }
+                textarea:focus {
+                    outline: none !important;
+                    border: 1px solid #2d2de4;
+                }
+                textarea::placeholder {
+                    font-size: 13px;
+                }
+                input {
+                    height: 30px;
+                    background: #2d2de4;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 3px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    padding: 0 30px;
+                    width: 150px;
+                }
+                input:hover {
+                    background: #101091;
+                }
+                small {
+                    font-size: 12px;
+                    color:  #d9534f;
+                }
+            }
+    }
     }
 }
